@@ -14,9 +14,9 @@ class DualThrustStrategy(BaseStrategy):
     """
 
     def init(self):
-        self.lookback = self.params.get("lookback", 20)
-        self.k1 = self.params.get("k1", 0.7)  # 上轨系数
-        self.k2 = self.params.get("k2", 0.7)  # 下轨系数
+        self.lookback = int(self.params.get("lookback", 20))
+        self.k1 = float(self.params.get("k1", 0.7))
+        self.k2 = float(self.params.get("k2", 0.7))
 
     def next(self, i: int):
         if i < self.lookback + 2:

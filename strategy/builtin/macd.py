@@ -13,9 +13,9 @@ class MACDStrategy(BaseStrategy):
     """
 
     def init(self):
-        self.fast = self.params.get("fast", 12)
-        self.slow = self.params.get("slow", 26)
-        self.signal = self.params.get("signal", 9)
+        self.fast = int(self.params.get("fast", 12))
+        self.slow = int(self.params.get("slow", 26))
+        self.signal = int(self.params.get("signal", 9))
         self._prev_hist = {}
 
     def next(self, i: int):

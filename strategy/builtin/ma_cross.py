@@ -13,8 +13,8 @@ class MACrossStrategy(BaseStrategy):
     """
 
     def init(self):
-        self.fast = self.params.get("fast", 5)
-        self.slow = self.params.get("slow", 20)
+        self.fast = int(self.params.get("fast", 5))
+        self.slow = int(self.params.get("slow", 20))
         self._prev_fast = {}
         self._prev_slow = {}
 

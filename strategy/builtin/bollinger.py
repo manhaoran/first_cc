@@ -13,8 +13,8 @@ class BollingerStrategy(BaseStrategy):
     """
 
     def init(self):
-        self.period = self.params.get("period", 20)
-        self.std = self.params.get("std", 2.0)
+        self.period = int(self.params.get("period", 20))
+        self.std = float(self.params.get("std", 2.0))
 
     def next(self, i: int):
         if i < self.period + 1:

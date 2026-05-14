@@ -13,9 +13,9 @@ class RSIStrategy(BaseStrategy):
     """
 
     def init(self):
-        self.period = self.params.get("period", 14)
-        self.oversold = self.params.get("oversold", 30)
-        self.overbought = self.params.get("overbought", 70)
+        self.period = int(self.params.get("period", 14))
+        self.oversold = float(self.params.get("oversold", 30))
+        self.overbought = float(self.params.get("overbought", 70))
 
     def next(self, i: int):
         if i < self.period + 2:
